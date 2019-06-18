@@ -1,6 +1,6 @@
 #!/bin/bash
 
-target_db_file='/tmp/download_history.db'
+target_db_file="/data/download_history.db"
 
 ### load the function ###
 cur_folder=`dirname $0`
@@ -16,7 +16,7 @@ then
     then
         ECHO_INFO "Removing old DB file [$target_db_file]"
         rm -f $target_db_file
-        echo "create table download_history (url varchar(255) UNIQUE, status varchar(50));" | sqlite3 $target_db_file
+        echo "create table download_history (url varchar(255) UNIQUE, status varchar(50), createTime DATETIME DEFAULT CURRENT_TIMESTAMP);" | sqlite3 $target_db_file
         ECHO_INFO "DB [$target_db_file] created"
     else
         ECHO_ERROR "Cancelled by user, exit..."

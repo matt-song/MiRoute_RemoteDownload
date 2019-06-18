@@ -4,8 +4,8 @@ use strict;
 use Data::Dumper;
 use CGI;
 
-my $DB = "/tmp/download_history.db";
-my $DEBUG = 1;
+my $DB = "/data/download_history.db";
+my $DEBUG = 0;
 my $_SQLITE="/usr/bin/sqlite3";
 
 ## print the debug message.

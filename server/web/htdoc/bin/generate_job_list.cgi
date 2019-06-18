@@ -19,7 +19,7 @@ my $all_url = RemoteDownload->get_download_list;
 foreach my $line (split /\n/,$all_url )
 {
     # print "The line is $line \n";
-    my ($id,$url,$status) = split /\|/, $line;
+    my ($id,$url,$status,$ctime) = split /\|/, $line;
     print HTML "$url\n";
 }
 close HTML;
